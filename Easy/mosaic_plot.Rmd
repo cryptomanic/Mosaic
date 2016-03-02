@@ -1,0 +1,20 @@
+---
+title: "How to interpret Mosaic Plot?"
+author: "Deepak Yadav"
+date: "1 March 2016"
+output: html_document
+---
+
+I will explain how we can interpret mosaic plot by taking an example from `productplots` package.
+
+```{r}
+library(productplots)
+prodplot(happy, ~ sex + happy, mosaic())
+```
+
+`sex` is a factor with two category - `male` and `female`. `happy` is also a factor with four category - `not too happy`, `pretty happy`, `very happy` and `NA`. These four categories are seperated by vertical lines and width of each category shows the proportion of people in the respective categories. For each category of happy factor we have two parts which shows proportion of males and females.
+
+This type of plot is very useful to know the relationship between categorical variables(factor) without looking into numbers. For example from this plot one can say that number of females in `not too happy` category are more than the number of males.
+
+
+
