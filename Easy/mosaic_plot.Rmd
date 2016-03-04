@@ -1,20 +1,20 @@
 ---
-title: "How to interpret Mosaic Plot?"
+title: "Mosaic Plots - Basic Interpretation"
 author: "Deepak Yadav"
-date: "1 March 2016"
+date: "4th Mar, 2016"
 output: html_document
 ---
 
-I will explain how we can interpret mosaic plot by taking an example from `productplots` package.
+A mosaic plot is a graphical display used to examine the relationship among two or more categorical variables. Here, we will analyze the `happy` dataset using a mosaic plot from the `productplots` package. We will take a look at the relationship between `sex` and `level of happiness`, taking the `level of happiness` as the first split and `sex` as the second split. 
 
 ```{r}
 library(productplots)
 prodplot(happy, ~ sex + happy, mosaic())
 ```
 
-`sex` is a factor with two category - `male` and `female`. `happy` is also a factor with four category - `not too happy`, `pretty happy`, `very happy` and `NA`. These four categories are seperated by vertical lines and width of each category shows the proportion of people in the respective categories. For each category of happy factor we have two parts which shows proportion of males and females.
+`sex` is a factor with two categories - `male` and `female`. And `happy` is a factor with four categories - `not too happy`, `pretty happy`, `very happy` and `NA`. These four categories are seperated by vertical lines and width of each category shows the proportion of people in the respective categories. For each category of happy factor we have two parts which show proportion of males and females in that category.
 
-This type of plot is very useful to know the relationship between categorical variables(factor) without looking into numbers. For example from this plot one can say that number of females in `not too happy` category are more than the number of males.
+The basic property of a mosaic plot resides in the fact that the higher the cell frequency in the contingency table, the greater the area of the corresponding rectangle. For example, in our dataset since the area of the `females` under the `pretty happy` category seems to be the largest, we can conclude that the number of females that fall under the `pretty happy` level of happiness is the greatest.
 
-
+This type of plot is convenient if we want to examine the relationship between categorical variables (factors) without looking into numbers. In this example, we can also infer that the approximate proportion of `males` and `females` in each `level of happiness` is nearly the same. So in this case, the `level of happiness` seems to be independent of `sex`. 
 
