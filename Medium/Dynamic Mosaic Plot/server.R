@@ -15,11 +15,30 @@ shinyServer(function(input, output) {
     # default divider is mosaic
     if(input$divider == "stacked") {
       
-      prodplot(happy[obs_selected, ], ~ happy + sex, stacked())
+      if(input$relation == "marital") {
+        
+        prodplot(happy[obs_selected, ], ~ happy + marital, stacked())  
+        
+      }
+      else {
+        
+        prodplot(happy[obs_selected, ], ~ happy + sex, stacked())  
+        
+      }
+      
       
     } else {
       
-      prodplot(happy[obs_selected, ], ~ happy + sex)
+      if(input$relation == "marital") {
+        
+        prodplot(happy[obs_selected, ], ~ happy + marital)  
+        
+      }
+      else {
+        
+        prodplot(happy[obs_selected, ], ~ happy + sex)  
+        
+      }
       
     } 
     

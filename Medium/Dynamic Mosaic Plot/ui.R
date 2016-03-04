@@ -21,7 +21,12 @@ shinyUI(fluidPage(
       # for selecting type of divider
       radioButtons("divider", "Select Divider:", 
                    c("Mosaic" = "mosaic",
-                     "Stacked" = "stacked" )) 
+                     "Stacked" = "stacked" )),
+      
+      # relationship between different categorical variables
+      radioButtons("relation", "Change Category:", 
+                   c("Marital" = "marital",
+                     "Sex" = "sex" ))
       
     ),
     
